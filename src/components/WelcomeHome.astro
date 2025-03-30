@@ -1,0 +1,61 @@
+---
+import '../styles/global.css'
+
+// Common Class Lists
+const headerClasses = 'space-y-2 pb-2 border-b-2 border-surface-800-200';
+const previewCardClasses = 'card bg-noise bg-surface-50-950 border-[1px] border-surface-200-800 flex justify-center items-center p-8';
+---
+
+<main>
+	<!-- Sticky Header -->
+	<header class="sticky top-0 z-50 bg-surface-50-950 shadow-xl">
+		<div class="container mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-10 p-4">
+			<h1 class="h3">Andrea Faccani</h1>
+			<p class="text-xs opacity-60"></p>
+			<a href="https://skeleton.dev" target="_blank" class="btn preset-filled">Contattami</a>
+		</div>
+	</header>
+
+	<!-- Page Contents -->
+	<div class="container mx-auto space-y-20 px-4 py-20">
+		<!-- -------------------------------------------------------- -->
+		<header class={headerClasses}>
+			<h2 class="h2">Fisioterapista a Domicilio</h2>
+			<h2 class="h4">Lugo e Dintorni</h2>
+		</header>
+		<!-- -------------------------------------------------------- -->
+
+		<section class="space-y-4">
+			<h3 class="h3">Card</h3>
+			<div class={previewCardClasses}>
+				<a
+					href="#card"
+					class="card preset-filled-surface-100-900 border-[1px] border-surface-200-800 card-hover divide-surface-200-800 block max-w-md divide-y overflow-hidden"
+				>
+					<header>
+						<img
+							src="https://images.unsplash.com/photo-1463171515643-952cee54d42a?q=80&w=450&h=190&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							class="aspect-[21/9] w-full grayscale hue-rotate-90"
+							alt="banner"
+						/>
+					</header>
+					<article class="space-y-4 p-4">
+						<div>
+							<h2 class="h6">Announcements</h2>
+							<h3 class="h3">Skeleton is Awesome</h3>
+						</div>
+						<p class="opacity-60">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident eveniet eligendi cumque consequatur
+							tempore sint nisi sapiente. Iste beatae laboriosam iure molestias cum expedita architecto itaque quae rem.
+						</p>
+					</article>
+					<footer class="flex items-center justify-between gap-4 p-4">
+						<small class="opacity-60">By Alex</small>
+						<small class="opacity-60">On {new Date().toLocaleDateString()}</small>
+					</footer>
+				</a>
+			</div>
+		</section>
+	</div>
+
+</main>
