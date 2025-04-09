@@ -1,0 +1,14 @@
+---
+import LayoutRoot from "@layouts/LayoutRoot.astro";
+import Header from "@components/generic/Header.astro";
+import Footer from "@components/generic/Footer.astro";
+
+---
+
+<LayoutRoot>
+	<Header></Header>
+	<main class="bg-surface-50-950">
+		<slot></slot>
+	</main>
+	<Footer />
+</LayoutRoot>

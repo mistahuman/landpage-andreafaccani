@@ -1,0 +1,98 @@
+---
+const stats = [
+  { number: "2000+", label: "Pazienti Trattati" },
+  { number: "15+", label: "Anni di Esperienza" },
+  { number: "95%", label: "Tasso di Successo" },
+  { number: "6", label: "Specializzazioni" },
+];
+import { Image } from 'astro:assets'
+import meImage from '/public/fac.jpg'
+import heroImage from '/public/fac2.jpeg'
+import logoImage from '/public/fisio-logo.jpeg'
+
+---
+
+<div class="text-center mb-12">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4">Chi sono</h2>
+  <p class="max-w-3xl mx-auto"></p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <!-- <h2 class="text-3xl md:text-4xl font-bold mb-6">Perché Scegliere Noi</h2>
+    <p class="mb-6">La nostra esperienza e dedizione ci hanno permesso di aiutare migliaia di pazienti a recuperare la loro mobilità e vivere senza dolore.</p>
+    
+    <div class="grid grid-cols-2 gap-6 mb-8">
+      {stats.map(stat => (
+        <div class="card p-4 text-center">
+          <div class="text-3xl font-bold text-primary-500">{stat.number}</div>
+          <div class="text-sm">{stat.label}</div>
+        </div>
+      ))}
+    </div> -->
+
+  <!-- <h3 class="h3 mb-4">La mia esperienza</h3> -->
+  <div class="card p-6 preset-outlined-secondary-500">
+    <ul class="list-inside space-y-2 text-lg">
+      <li>
+        <div class="text-xl mb-2 font-bold">
+          Laurea di Fisioterapia - Università di Bologna
+        </div>
+        <div class="mb-1">Formazione avanzata in:</div>
+        <ul class="list-inside list-disc space-y-2">
+          <li>Trattamento miofasciale (metodo Stecco).</li>
+          <li>Terapia manuale (concetto Maitland).</li>
+          <li>Riabilitazione della spalla.</li>
+          <li>Gestione e riabilitazione della lombalgia acuta e cronica.</li>
+          <li>Riabilitazione dei disturbi dell'equilibrio.</li>
+        </ul>
+      </li>
+    </ul>
+    <hr class="divider my-4" />
+    <div class="mt-4">
+      <blockquote class="blockquote">
+        <p>Cari pazienti,</p>
+        <p class="mt-2">
+          Mi chiamo Andrea Faccani e sono un fisioterapista specializzato nel trattamento dei disturbi
+          muscolo-scheletrici. Da sempre impegnato nell’ambito della riabilitazione, ho maturato una
+          significativa esperienza nella gestione post-chirurgica e nella riabilitazione dell’apparato
+          muscolo-scheletrico.
+        </p>
+        <p>
+          Ho conseguito la laurea in Fisioterapia presso l’Università di Bologna e ho successivamente
+          ampliato la mia formazione attraverso corsi di specializzazione avanzati, tra cui il
+          trattamento miofasciale secondo il metodo Stecco, la terapia manuale basata sul concetto
+          Maitland, la valutazione e il trattamento riabilitativo della spalla,e della lombalgia acuta e
+          cronica.
+        </p>
+        <p>
+          Nel corso della mia carriera professionale, mi sono dedicato in particolare alla riabilitazione
+          post-operatoria e alla gestione del dolore cronico, perseguendo costantemente l’eccellenza
+          terapeutica attraverso l’adozione di trattamenti evidence-based e linee guida internazionali.
+          La mia pratica clinica si avvale dell’esercizio terapeutico e della terapia manuale, con
+          l’obiettivo di promuovere il recupero funzionale e la migliore qualità di vita dei pazienti.
+        </p>
+        <p>
+          Sono convinto che un approccio personalizzato e integrato sia fondamentale per il
+          raggiungimento degli obiettivi di salute di ciascun paziente. Per questo motivo, collaboro
+          attivamente con équipe multidisciplinari e con i medici di base al fine di offrire un percorso
+          terapeutico ottimale e di qualità.
+        </p>
+        <p class="mt-4">
+          Andrea Faccani
+        </p>
+      </blockquote>
+      </div>
+  </div>
+
+  <div class="flex flex-col gap-4">
+    <Image src={heroImage} alt="Trattamento fisioterapico"
+      class="rounded-xl w-full max-w-sm md:max-w-2xl h-auto" />
+    <div class="grid grid-cols-3 gap-4">
+      <Image src={heroImage} alt="Trattamento fisioterapico"
+      class="rounded-xl w-full max-w-sm md:max-w-2xl" />
+      <Image src={heroImage} alt="Trattamento fisioterapico"
+      class="rounded-xl w-full max-w-sm md:max-w-2xl" />
+      <Image src={heroImage} alt="Trattamento fisioterapico"
+      class="rounded-xl w-full max-w-sm md:max-w-2xl" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+---
+const stats = [
+  { number: "2000+", label: "Pazienti Trattati" },
+  { number: "15+", label: "Anni di Esperienza" },
+  { number: "95%", label: "Tasso di Successo" },
+  { number: "6", label: "Specializzazioni" }
+];
+
+const certifications = [
+  "Certificazione in Terapia Manuale",
+  "Master in Riabilitazione Sportiva",
+  "Certificazione McKenzie",
+  "Specializzazione in Dry Needling"
+];
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <div>
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Perché Scegliere Noi</h2>
+    <p class="mb-6">La nostra esperienza e dedizione ci hanno permesso di aiutare migliaia di pazienti a recuperare la loro mobilità e vivere senza dolore.</p>
+    
+    <div class="grid grid-cols-2 gap-6 mb-8">
+      {stats.map(stat => (
+        <div class="card p-4 text-center">
+          <div class="text-3xl font-bold text-primary-500">{stat.number}</div>
+          <div class="text-sm">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+    
+    <h3 class="h3 mb-4">Certificazioni e Specializzazioni</h3>
+    <ul class="list">
+      {certifications.map(cert => (
+        <li class="flex items-center gap-2 mb-2">
+          <i class="icon-check text-success-500"></i>
+          <span>{cert}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+  
+  <div class="flex flex-col gap-4">
+    <img src="/images/clinica.jpg" alt="La nostra clinica" class="rounded-xl w-full h-auto" />
+    <div class="grid grid-cols-3 gap-4">
+      <img src="/images/trattamento1.jpg" alt="Trattamento" class="rounded-lg w-full h-auto" />
+      <img src="/images/trattamento2.jpg" alt="Trattamento" class="rounded-lg w-full h-auto" />
+      <img src="/images/trattamento3.jpg" alt="Trattamento" class="rounded-lg w-full h-auto" />
+    </div>
+  </div>
+</div>

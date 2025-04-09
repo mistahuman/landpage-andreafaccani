@@ -1,0 +1,51 @@
+---
+import { Linkedin, Github, Instagram, Mail, Phone } from "@lucide/svelte";
+---
+<div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Prenota ora la tua seduta e inizia il tuo percorso di guarigione.</h2>
+    <!-- <p class="max-w-3xl mx-auto">Contattami!</p> -->
+  </div>
+<div class="text-center space-y-4">
+        <ul class="space-y-2">
+            <li>
+                <a
+                    class="btn preset-outlined-primary-500"
+					href="https://wa.me/+393335694767"
+                    type="button"
+				>
+                    <span>
+                        Chiama o scrivi su WhatsApp
+                    </span>
+                    <span>
+                        <Phone size={20} />
+                    </span>
+				</a>
+            </li>
+            <li>
+                <a
+                    href="mailto:andrea.faccani3@gmail.com"
+                    target="_blank"
+                    type="button"
+                    class="btn preset-outlined-primary-500"
+                >
+                    <span> andrea.faccani3@gmail.com </span>
+                    <span>
+                        <Mail size={20} />
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a
+                    href="https://www.instagram.com/facca_26"
+                    target="_blank"
+                    type="button"
+                    class="btn preset-outlined-primary-500"
+                >
+                    <span> facca_26 </span>
+                    <span>
+                        <Instagram size={20} />
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>

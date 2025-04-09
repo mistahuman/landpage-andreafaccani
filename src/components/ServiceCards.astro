@@ -1,0 +1,63 @@
+---
+import {
+  HeartPulse,
+  Hand,
+  Activity,
+  Accessibility,
+  StretchHorizontal,
+} from "@lucide/svelte";
+
+const services = [
+  {
+    title: "Riabilitazione Post-Operatoria",
+    description:
+      "Recupero funzionale dopo traumi e interventi chirurgici (ginocchio, anca, colonna vertebrale).",
+    icon: HeartPulse,
+  },
+  {
+    title: "Trattamento del dolore cronico e aspecifico",
+    description:
+      "Manipolazioni e mobilizzazioni per ridurre il dolore (mal di schiena, cervicalgia, tendinopatie).",
+    icon: Hand,
+  },
+  {
+    title: "Fisioterapia per disturbi dell'equilibrio",
+    description: "..",
+    icon: Accessibility,
+  },
+  {
+    title: "Riabilitazione vestibolare",
+    description: "..",
+    icon: Accessibility,
+  },
+  {
+    title: "Terapia manuale e trattamento miofasciale",
+    description: "..",
+    icon: Activity,
+  },
+  {
+    title: "Esercizio terapeutico personalizzato",
+    description: "Per il recupero della mobilità e della forza muscolare.",
+    icon: StretchHorizontal,
+  },
+];
+---
+<div class="text-center mb-12">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4">Servizi Offerti</h2>
+  <p class="max-w-3xl mx-auto">..</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {
+    services.map(({ title, description, icon: Icon }) => (
+      <div class="card p-6 preset-tonal-secondary transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="bg-primary-500/20 p-3 rounded-full text-primary-700">
+            <Icon size={28} />
+          </div>
+          <h3 class="h3">{title}</h3>
+        </div>
+        <p>{description}</p>
+      </div>
+    ))
+  }
+</div>

@@ -1,0 +1,42 @@
+---
+
+const steps = [
+  {
+    number: "01",
+    title: "Prenota un appuntamento",
+    description: "Contattami per una valutazione iniziale."
+  },
+  {
+    number: "02",
+    title: "Valutazione e piano di trattamento",
+    description: "Analizzerò il tuo caso per struttura il percorso più adatto."
+  },
+  {
+    number: "03",
+    title: "Sedute al tuo domicilio o nel centro medico con cui collaboro",
+    description: "Riceverei il trattamento nel luogo più comodo per te, con sessioni su misura per il tuo recupero."
+  },
+];
+---
+<div class="text-center mb-12">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4">Come funzione il servizio</h2>
+  <p class="max-w-3xl mx-auto">..</p>
+</div>
+<div class="relative">
+  <!-- Linea di connessione (visibile solo su desktop) -->
+  <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-primary-500/30 -translate-y-1/2"></div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {steps.map((step, index) => (
+      <div class="card p-6 preset-outlined-primary-500 relative z-10 bg-surface-50 dark:bg-surface-900">
+        <div class="flex flex-col items-center text-center">
+          <div class="bg-primary-500 text-white text-xl font-bold h-12 w-12 rounded-full flex items-center justify-center mb-4">
+            {step.number}
+          </div>
+          <h3 class="h3 mb-2">{step.title}</h3>
+          <p>{step.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

@@ -1,0 +1,39 @@
+---
+const problems = [
+  {
+    problem: "Dolore cronico",
+    solution: "Tecniche manuali avanzate e programmi personalizzati per la gestione del dolore"
+  },
+  {
+    problem: "Recupero post-infortunio",
+    solution: "Protocolli di riabilitazione accelerata basati sulle più recenti evidenze scientifiche"
+  },
+  {
+    problem: "Problemi posturali",
+    solution: "Analisi posturale computerizzata e programmi correttivi specifici"
+  }
+];
+---
+
+<div class="text-center mb-12">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4">Problemi e Soluzioni</h2>
+  <p class="max-w-3xl mx-auto">Ogni problema fisico ha una soluzione specifica. Il nostro approccio personalizzato si concentra sulle tue esigenze uniche.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  {problems.map(item => (
+    <div class="card preset-outlined-secondary-500 p-6 text-center transition-all duration-200 hover:shadow-lg">
+      <div class="bg-error-500/10 p-6 rounded-full inline-flex justify-center items-center mb-4">
+        <i class="icon-alert-triangle text-error-500 text-2xl"></i>
+      </div>
+      <h3 class="h3 mb-2">{item.problem}</h3>
+      <div class="divider my-4">
+        <i class="icon-arrow-down"></i>
+      </div>
+      <div class="bg-success-500/10 p-6 rounded-full inline-flex justify-center items-center mb-4">
+        <i class="icon-check-circle text-success-500 text-2xl"></i>
+      </div>
+      <p>{item.solution}</p>
+    </div>
+  ))}
+</div>

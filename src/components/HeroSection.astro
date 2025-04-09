@@ -1,0 +1,45 @@
+---
+// Puoi importare immagini o altri componenti
+import { Phone, ChevronDown } from "@lucide/svelte"
+import { Image } from 'astro:assets'
+import heroImage from '/public/fac2.jpeg'
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+  <div class="order-2 md:order-1">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+      Fisioterapia a domicilio su Lugo e dintorni
+    </h1>
+    <p class="text-lg md:text-xl mb-2 mt-2">
+      Mi chiamo <strong>Andrea Faccani</strong>, sono un <i>fisioterapista specializzato nei disturbi muscolo-scheletrici e vestibolari</i> e offro <i>valutazioni e trattamenti fisioterapici a domicilio</i> per garantire un percorso di cura comodo e efficace.
+    </p>
+    <hr class="hidden md:block w-full border-t-2 border-gray-300 my-8" />
+    <h2 class="text-xl md:text-2xl mb-6 opacity-80 font-bold">
+      Recupera la tua migliore attività e qualità di vita direttamente a casa tua
+    </h2>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="https://wa.me/+393335694767" class="btn preset-filled-primary-500">
+        <span>
+          Prenota una Valutazione
+        </span>
+        <span>
+          <Phone size={20} />
+        </span>
+      </a>
+      <a href="#servizi" class="btn preset-tonal-primary">
+        <span>
+          Scopri i Servizi
+        </span>
+        <span>
+          <ChevronDown size={20} />
+        </span>
+      </a>
+    </div>
+  </div>
+  <div class="order-1 md:order-2">
+    <div class="relative rounded-xl overflow-hidden">
+      <Image src={heroImage} alt="Trattamento fisioterapico"
+      class="rounded-xl w-full max-w-sm md:max-w-md lg:max-w-lg" />
+    </div>
+  </div>
+</div>

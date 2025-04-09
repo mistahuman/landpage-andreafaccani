@@ -1,0 +1,36 @@
+---
+import { Home, SlidersHorizontal, Activity } from "@lucide/svelte";
+
+const problems = [
+  {
+    icon: Home,
+    title: "Comodità e flessibilità",
+    description: "Ricevi il trattamento direttamente a casa tua o nei centri medici nei quali collaboro."
+  },
+  {
+    icon: SlidersHorizontal,
+    title: "Percorsi personalizzati",
+    description: "Programmi di riabilitazione su misura per le tue esigenze specifiche."
+  },
+  {
+    icon: Activity,
+    title: "Trattamenti efficaci",
+    description: "Trattamenti basati sulle più recenti evidenze scientifiche e linee guida."
+  }
+];
+---
+<div class="text-center mb-12">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4">Perchè scegliere la fiosioterapia con me</h2>
+  <p class="max-w-3xl mx-auto">Ogni problema fisico ha una soluzione specifica. Il nostro approccio personalizzato si concentra sulle tue esigenze uniche.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  {problems.map(({ icon: Icon, title, description }) => (
+    <div class="card preset-filled-secondary-500 p-6 text-center transition-all duration-200 hover:shadow-lg">
+      <div class="bg-error-500/10 p-6 rounded-full inline-flex justify-center items-center mb-4">
+        <Icon size={40} />
+      </div>
+      <h3 class="h3 mb-2">{title}</h3>
+      <p>{description}</p>
+    </div>
+  ))}
+</div>

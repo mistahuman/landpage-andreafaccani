@@ -1,0 +1,88 @@
+---
+// Component Imports
+import WelcomeHome from "@components/WelcomeHome.astro";
+import ContactsView from "@components/ContactsView.astro";
+import HeroSection from "@components/HeroSection.astro";
+import ProblemSolution from "@components/ProblemSolution.astro";
+import ServiceCards from "@components/ServiceCards.astro";
+import WorkMethod from "@components/WorkMethod.astro";
+import TrustSection from "@components/TrustSection.astro";
+import Testimonials from "@components/Testimonials.astro";
+import MainCTA from "@components/MainCTA.astro";
+import FAQSection from "@components/FAQSection.astro";
+import WhyMe from "@components/WhyMe.astro";
+import WorkSection from "@components/WorkSection.astro";
+
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+		<!-- Hero Section con Gradient -->
+		<div class="gradient-homepage-one">
+			<section class="py-16 md:py-24">
+				<div class="container mx-auto px-4 md:px-8">
+					<HeroSection />
+				</div>
+			</section>
+
+			<!-- Problema/Soluzione -->
+			<section class="py-12 md:py-16">
+				<div class="container mx-auto px-4 md:px-8">
+					<WhyMe />
+				</div>
+			</section>
+			<!-- Servizi -->
+			<section class="py-16 md:py-20 bg-surface-100-800" id="servizi">
+				<div class="container mx-auto px-4 md:px-8">
+					<ServiceCards />
+				</div>
+			</section>
+		</div>
+		
+		<div class="gradient-homepage-two">
+			<!-- Credenziali e Trust -->
+			<section class="py-16 md:py-20 ">
+				<div class="container mx-auto px-4 md:px-8">
+					<WorkSection />
+				</div>
+			</section>
+
+			<!-- Metodo di Lavoro -->
+			<section class="py-16 md:py-24">
+				<div class="container mx-auto px-4 md:px-8">
+					<WorkMethod />
+				</div>
+			</section>
+			<!-- Testimonianze -->
+			<!-- <section class="py-16 md:py-20 bg-surface-100-800">
+				<div class="container mx-auto px-4 md:px-8">
+					<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Cosa Dicono i Pazienti</h2>
+					<Testimonials />
+				</div>
+			</section> -->
+			
+			<!-- Call to Action Principale -->
+			<!-- <section class="py-16 md:py-24 bg-white">
+				<div class="container mx-auto px-4 md:px-8">
+					<MainCTA />
+				</div>
+			</section> -->
+			
+			<!-- FAQ Section -->
+			<section class="py-16 md:py-20 bg-surface-100-800">
+				<div class="container mx-auto px-4 md:px-8">
+					<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Domande Frequenti</h2>
+					<FAQSection />
+				</div>
+			</section>
+			
+			<!-- Contatti (il tuo componente esistente) -->
+			<section class="py-12 md:py-16">
+				<div class="container mx-auto justify-center p-6 md:p-10">
+					<ContactsView />
+				</div>
+			</section>
+		
+		</div>
+		
+</Layout>

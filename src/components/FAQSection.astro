@@ -1,0 +1,58 @@
+---
+const faqs = [
+  {
+    question: "Quante sedute sono necessarie per vedere risultati?",
+    answer: "Il numero di sedute varia in base alla problematica. Generalmente, per problemi acuti possono bastare 3-5 sedute, mentre per condizioni croniche potrebbe essere necessario un percorso più lungo. Durante la prima visita saremo in grado di fornirti un piano personalizzato."
+  },
+  {
+    question: "È necessaria l'impegnativa del medico?",
+    answer: "No, non è necessaria un'impegnativa per accedere ai trattamenti di fisioterapia. Puoi prenotare direttamente una valutazione. Tuttavia, se hai una prescrizione medica, portala con te alla prima visita."
+  },
+  {
+    question: "Lavorate con assicurazioni sanitarie?",
+    answer: "Sì, collaboriamo con le principali assicurazioni sanitarie. Ti consigliamo di verificare la copertura con la tua assicurazione prima della visita."
+  },
+  {
+    question: "Quanto dura una seduta di fisioterapia?",
+    answer: "Le sedute durano generalmente 45-60 minuti. La prima visita può durare fino a 75 minuti per permetterci di effettuare una valutazione completa."
+  },
+  {
+    question: "Che abbigliamento devo indossare?",
+    answer: "Ti consigliamo di indossare abbigliamento comodo che permetta libertà di movimento. Per alcune valutazioni potrebbe essere necessario esporre l'area da trattare."
+  }
+];
+---
+
+<div class="max-w-3xl mx-auto">
+  <div class="accordion">
+    {faqs.map((faq, index) => (
+      <div class="accordion-item border-b border-surface-300-600-token">
+        <h3>
+          <button class="accordion-header flex justify-between items-center w-full py-4 text-left font-medium" id={`accordion-header-${index}`} aria-expanded="false">
+            {faq.question}
+            <i class="icon-chevron-down transition-transform"></i>
+          </button>
+        </h3>
+        <div class="accordion-panel hidden" id={`accordion-panel-${index}`} aria-labelledby={`accordion-header-${index}`}>
+          <p class="pb-4">{faq.answer}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  // Script per il funzionamento dell'accordion
+  document.querySelectorAll('.accordion-header').forEach(button => {
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!expanded));
+      
+      const panel = button.parentElement.nextElementSibling;
+      panel.classList.toggle('hidden');
+      
+      const icon = button.querySelector('i');
+      icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+  });
+</script>

@@ -1,0 +1,60 @@
+---
+const testimonials = [
+  {
+    name: "Marco Rossi",
+    image: "persona1.jpg",
+    text: "Dopo un infortunio al ginocchio, pensavo che non sarei più tornato a correre. Grazie alla terapia personalizzata, ho completato la mia prima maratona sei mesi dopo!",
+    rating: 5
+  },
+  {
+    name: "Laura Bianchi",
+    image: "persona2.jpg",
+    text: "La cervicale mi causava emicranie frequenti. Con il programma di esercizi e le sedute di terapia manuale, i miei mal di testa sono praticamente scomparsi.",
+    rating: 5
+  },
+  {
+    name: "Giuseppe Verdi",
+    image: "persona3.jpg",
+    text: "Professionalità e competenza. Ho risolto il mio problema alla schiena in poche sedute. Altamente consigliato!",
+    rating: 5
+  }
+];
+---
+
+<div class="carousel">
+  {testimonials.map(testimonial => (
+    <div class="carousel-slide">
+      <div class="card p-6 h-full flex flex-col">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="avatar w-16 h-16 rounded-full overflow-hidden">
+            <img src={testimonial.image} alt={testimonial.name} class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <h4 class="font-bold">{testimonial.name}</h4>
+            <div class="flex gap-1">
+              {Array(testimonial.rating).fill().map(() => (
+                <i class="icon-star text-yellow-500"></i>
+              ))}
+            </div>
+          </div>
+        </div>
+        <p class="flex-1 italic">{testimonial.text}</p>
+      </div>
+    </div>
+  ))}
+  
+  <!-- Controlli carosello -->
+  <div class="flex justify-center gap-4 mt-8">
+    <button class="btn-icon variant-soft carousel-prev">
+      <i class="icon-chevron-left"></i>
+    </button>
+    <button class="btn-icon variant-soft carousel-next">
+      <i class="icon-chevron-right"></i>
+    </button>
+  </div>
+</div>
+
+<script>
+  // Qui puoi aggiungere la logica JavaScript per il carosello
+  // o utilizzare una libreria come Swiper.js
+</script>

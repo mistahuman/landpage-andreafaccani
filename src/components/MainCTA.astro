@@ -1,0 +1,62 @@
+---
+// Importa eventuali dipendenze
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Prenota la tua Consulenza</h2>
+      <p class="mb-6">Fai il primo passo verso il recupero. Compila il modulo per richiedere una consulenza o prenotare un appuntamento. Ti risponderemo entro 24 ore.</p>
+      
+      <div class="card p-6 bg-primary-500/10 mb-6">
+        <div class="flex items-center gap-3">
+          <i class="icon-info-circle text-primary-500"></i>
+          <p>Tutti i dati sono trattati nel rispetto della privacy. Non condividiamo le tue informazioni con terze parti.</p>
+        </div>
+      </div>
+      
+      <div class="flex flex-col md:flex-row gap-4 items-center">
+        <div class="flex items-center gap-3">
+          <i class="icon-phone text-primary-500"></i>
+          <span class="font-bold">+39 123 456 7890</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="icon-map-pin text-primary-500"></i>
+          <span>Via Roma 123, Milano</span>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <form class="card p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <label class="label">
+            <span>Nome</span>
+            <input class="input" type="text" placeholder="Il tuo nome" required />
+          </label>
+          <label class="label">
+            <span>Cognome</span>
+            <input class="input" type="text" placeholder="Il tuo cognome" required />
+          </label>
+        </div>
+        <div class="grid grid-cols-1 gap-4 mb-4">
+          <label class="label">
+            <span>Email</span>
+            <input class="input" type="email" placeholder="La tua email" required />
+          </label>
+          <label class="label">
+            <span>Telefono</span>
+            <input class="input" type="tel" placeholder="Il tuo numero" required />
+          </label>
+        </div>
+        <label class="label mb-4">
+          <span>Messaggio</span>
+          <textarea class="textarea" rows="3" placeholder="Descrivi brevemente il tuo problema"></textarea>
+        </label>
+        <label class="flex items-center gap-2 mb-6">
+          <input type="checkbox" required />
+          <span class="text-sm">Accetto il trattamento dei dati personali</span>
+        </label>
+        <button type="submit" class="btn variant-filled-primary w-full">Invia Richiesta</button>
+      </form>
+    </div>
+  </div>
