@@ -1,0 +1,115 @@
+---
+import { ArrowLeft, ArrowRight } from '@lucide/svelte';
+
+// Array di immagini statiche dal public
+const images = [
+  'facAi.jpeg',
+  // 'post-op1.jpeg',
+  // 'post-op2.jpeg',
+  'post-op3.jpeg',
+  'post-op4.jpeg',
+  'post-op5.jpeg',
+  'post-op6.jpeg',
+  'post-op7.jpeg',
+  'es-tera.jpeg',
+  'riab-eq.jpeg',
+  'ter-man.jpeg',
+  'favicon.jpeg'
+];
+---
+
+<div class="w-full">
+  <!-- Carousel -->
+  <div class="card p-4 grid grid-cols-[auto_1fr_auto] gap-4 items-center">
+    <!-- Button: Left -->
+    <button type="button" class="btn-icon preset-filled" data-carousel-left>
+      <ArrowLeft size={16} />
+    </button>
+    <!-- Full Images -->
+    <div
+    data-carousel
+    class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto w-full"
+    style="scrollbar-width: none;"
+    >
+    {
+      images.map((src, i) => (
+        <img
+          class="snap-center flex-shrink-0 w-full max-w-full h-[768px] object-cover rounded-container"
+          src={src}
+          alt={`full-${i}`}
+          loading="lazy"
+        />
+      ))
+    }
+    </div>
+    <!-- Button: Right -->
+    <button type="button" class="btn-icon preset-filled" data-carousel-right>
+      <ArrowRight size={16} />
+    </button>
+  </div>
+  <!-- Thumbnails -->
+  <div class="card p-4 grid grid-cols-6 gap-4">
+    {
+      images.map((src, i) => (
+        <button type="button" data-thumbnail>
+          <img
+            class="w-full h-[144px] object-cover rounded-container hover:brightness-125"
+            src={src}
+            alt={`thumb-${i}`}
+            loading="lazy"
+          />
+        </button>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  // Query Element References
+  const elemCarousel: HTMLDivElement | null = document.querySelector('[data-carousel]');
+  const elemCarouselLeft: HTMLButtonElement | null = document.querySelector('[data-carousel-left]');
+  const elemCarouselRight: HTMLButtonElement | null = document.querySelector('[data-carousel-right]');
+  const elemThumbnails: NodeListOf<HTMLElement> = document.querySelectorAll('[data-thumbnail]');
+
+  // Set Left/Right arrow click handlers
+  elemCarouselLeft?.addEventListener('click', () => carouselLeft());
+  elemCarouselRight?.addEventListener('click', () => carouselRight());
+
+  // Set thumbnail click handler
+  if (elemThumbnails.length > 0) {
+    elemThumbnails.forEach((elemButton: HTMLElement, index: number) => {
+      elemButton?.addEventListener('click', () => carouselThumbnail(index));
+    });
+  }
+
+  /** On navigation left, scroll the container */
+  function carouselLeft() {
+    if (!elemCarousel) return;
+    const x =
+      elemCarousel.scrollLeft === 0
+        ? elemCarousel.clientWidth * elemCarousel.childElementCount
+        : elemCarousel.scrollLeft - elemCarousel.clientWidth;
+    elemCarousel.scroll(x, 0);
+  }
+
+  /** On navigation right, scroll the container */
+  function carouselRight() {
+    if (!elemCarousel) return;
+    const x =
+      elemCarousel.scrollLeft === elemCarousel.scrollWidth - elemCarousel.clientWidth
+        ? 0
+        : elemCarousel.scrollLeft + elemCarousel.clientWidth;
+    elemCarousel.scroll(x, 0);
+  }
+
+  /** On thumbnail click, scroll large image into view */
+  function carouselThumbnail(index: number) {
+    if (elemCarousel) elemCarousel.scroll(elemCarousel.clientWidth * index, 0);
+  }
+</script>
+
+<style>
+  [data-carousel]::-webkit-scrollbar {
+    display: none;
+  }
+</style>

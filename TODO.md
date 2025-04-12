@@ -1,0 +1,5 @@
+- logo da svgizare
+- migliorare card servizi offerti e scheda chi sono, con lettera nascosta
+- carosello di foto
+- aggiungere bottone per chiamare, rimuovere quello di instagram
+- minor fix

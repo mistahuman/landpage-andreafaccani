@@ -7,57 +7,69 @@ import {
   StretchHorizontal,
 } from "@lucide/svelte";
 
+import CardImage from "@components/generic/CardImage.astro";
+
 const services = [
   {
     title: "Riabilitazione Post-Operatoria",
     description:
-      "Recupero funzionale dopo traumi e interventi chirurgici (ginocchio, anca, colonna vertebrale).",
+      "Recupero funzionale post trauma e interventi chirurgici (spalla, ginocchio, anca, colonna vertebrale).",
     icon: HeartPulse,
+    imgSrc: 'post-op1.jpeg'
   },
   {
     title: "Trattamento del dolore cronico e aspecifico",
     description:
-      "Manipolazioni e mobilizzazioni per ridurre il dolore (mal di schiena, cervicalgia, tendinopatie).",
+      "Utilizzo un approccio biopsicosociale basato su educazione e attivazione (mal di schiena, cervicalgia, tendinopatie). Aiuto il paziente a capire il dolore e a tornare a muoversi in modo graduale e mirato, indicato per mal di schiena, cervicalgia e tendinopatie.",
     icon: Hand,
+    imgSrc: 'post-op2.jpeg'
+
   },
   {
     title: "Fisioterapia per disturbi dell'equilibrio",
-    description: "..",
+    description: "Sono in grado di differenziare se la problematica è di natura vesitbolare, visiva, propriocettiva o centrale, avvalendomi di un'attenta valutazione e riallenando le funzione deficitarie.",
     icon: Accessibility,
-  },
-  {
-    title: "Riabilitazione vestibolare",
-    description: "..",
-    icon: Accessibility,
+    imgSrc: 'es-tera.jpeg'
+
   },
   {
     title: "Terapia manuale e trattamento miofasciale",
-    description: "..",
+    description: "Utilizzo tecniche mirate alla riduzione del dolore, tensione muscolare e della rigidità articolare, migliorando il movimento e preparando il corpo al recupero attivo.",
     icon: Activity,
+    imgSrc: 'ter-man.jpeg'
+
   },
   {
     title: "Esercizio terapeutico personalizzato",
-    description: "Per il recupero della mobilità e della forza muscolare.",
+    description: "Il cuore del percorso riabilitativo! Permette di recuperare la mobilità e forza muscolare, riducendo dolore e ottenendo risultati duraturi. Fondamentale per consolidare benefici delle terapie passive e prevenire ricadute.",
     icon: StretchHorizontal,
+    imgSrc: 'riab-eq.jpeg'
+
   },
 ];
 ---
 <div class="text-center mb-12">
   <h2 class="text-3xl md:text-4xl font-bold mb-4">Servizi Offerti</h2>
-  <p class="max-w-3xl mx-auto">..</p>
+  <!-- <p class="max-w-3xl mx-auto">..</p> -->
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   {
-    services.map(({ title, description, icon: Icon }) => (
-      <div class="card p-6 preset-tonal-secondary transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
-        <div class="flex items-center gap-4 mb-4">
-          <div class="bg-primary-500/20 p-3 rounded-full text-primary-700">
-            <Icon size={28} />
-          </div>
-          <h3 class="h3">{title}</h3>
-        </div>
-        <p>{description}</p>
-      </div>
+    services.map(({ title, description, icon: Icon, imgSrc }) => (
+      // <div class="card p-6 preset-tonal-secondary transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
+      //   <div class="flex items-center gap-4 mb-4">
+      //     <div class="bg-primary-500/20 p-3 rounded-full text-primary-700">
+      //       <Icon size={28} />
+      //     </div>
+      //     <h3 class="h3">{title}</h3>
+      //   </div>
+      //   <p>{description}</p>
+      // </div>
+      <CardImage 
+        title={title}
+        description={description}
+        imgSrc={imgSrc}
+        alt="banner"
+      />
     ))
   }
 </div>

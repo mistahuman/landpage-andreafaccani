@@ -1,5 +1,5 @@
 ---
-import { Linkedin, Github, Instagram, Mail, Phone } from "@lucide/svelte";
+import { Send, Instagram, Mail, Phone } from "@lucide/svelte";
 ---
 <div class="text-center mb-12">
     <h2 class="text-3xl md:text-4xl font-bold mb-4">Prenota ora la tua seduta e inizia il tuo percorso di guarigione.</h2>
@@ -7,6 +7,19 @@ import { Linkedin, Github, Instagram, Mail, Phone } from "@lucide/svelte";
   </div>
 <div class="text-center space-y-4">
         <ul class="space-y-2">
+            <li>
+                <a
+                class="btn preset-outlined-primary-500"
+                href="tel:+393335694767"
+                type="button"
+                >
+                <span>Chiama ora</span>
+                <span>
+                    <Phone size={20} />
+                </span>
+                </a>
+
+            </li>
             <li>
                 <a
                     class="btn preset-outlined-primary-500"
@@ -17,7 +30,7 @@ import { Linkedin, Github, Instagram, Mail, Phone } from "@lucide/svelte";
                         Chiama o scrivi su WhatsApp
                     </span>
                     <span>
-                        <Phone size={20} />
+                        <Send size={20} />
                     </span>
 				</a>
             </li>
@@ -34,7 +47,7 @@ import { Linkedin, Github, Instagram, Mail, Phone } from "@lucide/svelte";
                     </span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a
                     href="https://www.instagram.com/facca_26"
                     target="_blank"
@@ -46,6 +59,6 @@ import { Linkedin, Github, Instagram, Mail, Phone } from "@lucide/svelte";
                         <Instagram size={20} />
                     </span>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>

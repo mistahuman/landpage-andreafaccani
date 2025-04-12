@@ -12,6 +12,8 @@ import MainCTA from "@components/MainCTA.astro";
 import FAQSection from "@components/FAQSection.astro";
 import WhyMe from "@components/WhyMe.astro";
 import WorkSection from "@components/WorkSection.astro";
+import MySection from "@components/MySection.astro";
+import CardImage from "@components/generic/CardImage.astro";
 
 import Layout from "@layouts/Layout.astro";
 ---
@@ -31,19 +33,22 @@ import Layout from "@layouts/Layout.astro";
 					<WhyMe />
 				</div>
 			</section>
+
 			<!-- Servizi -->
 			<section class="py-16 md:py-20 bg-surface-100-800" id="servizi">
 				<div class="container mx-auto px-4 md:px-8">
 					<ServiceCards />
 				</div>
 			</section>
+
 		</div>
 		
 		<div class="gradient-homepage-two">
 			<!-- Credenziali e Trust -->
 			<section class="py-16 md:py-20 ">
 				<div class="container mx-auto px-4 md:px-8">
-					<WorkSection />
+					<!-- <WorkSection /> -->
+					<MySection />
 				</div>
 			</section>
 

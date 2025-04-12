@@ -9,6 +9,7 @@ import { Image } from 'astro:assets'
 import meImage from '/public/fac.jpg'
 import heroImage from '/public/fac2.jpeg'
 import logoImage from '/public/fisio-logo.jpeg'
+import Carousels from './Carousels.astro';
 
 ---
 
@@ -34,7 +35,7 @@ import logoImage from '/public/fisio-logo.jpeg'
     <ul class="list-inside space-y-2 text-lg">
       <li>
         <div class="text-xl mb-2 font-bold">
-          Laurea di Fisioterapia - Università di Bologna
+          Laurea in Fisioterapia - Università di Bologna
         </div>
         <div class="mb-1">Formazione avanzata in:</div>
         <ul class="list-inside list-disc space-y-2">
@@ -84,7 +85,7 @@ import logoImage from '/public/fisio-logo.jpeg'
   </div>
 
   <div class="flex flex-col gap-4">
-    <Image src={heroImage} alt="Trattamento fisioterapico"
+    <!-- <Image src={heroImage} alt="Trattamento fisioterapico"
       class="rounded-xl w-full h-auto" />
     <div class="grid grid-cols-3 gap-4">
       <Image src={heroImage} alt="Trattamento fisioterapico"
@@ -93,6 +94,7 @@ import logoImage from '/public/fisio-logo.jpeg'
       class="rounded-lg w-full h-auto" />
       <Image src={heroImage} alt="Trattamento fisioterapico"
       class="rounded-lg w-full h-auto" />
-    </div>
+    </div> -->
+    <Carousels />
   </div>
 </div>

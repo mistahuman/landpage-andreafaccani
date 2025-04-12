@@ -1,0 +1,27 @@
+---
+const stats = [
+  { number: "2000+", label: "Pazienti Trattati" },
+  { number: "15+", label: "Anni di Esperienza" },
+  { number: "95%", label: "Tasso di Successo" },
+  { number: "6", label: "Specializzazioni" },
+];
+import { Image } from 'astro:assets'
+import meImage from '/public/fac.jpg'
+import heroImage from '/public/fac2.jpeg'
+import logoImage from '/public/fisio-logo.jpeg'
+import Carousels from './Carousels.astro';
+import MyCv from './MyCv.astro';
+
+---
+
+<div class="text-center mb-12">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4">Chi sono</h2>
+  <p class="max-w-3xl mx-auto"></p>
+</div>
+<div class="grid grid-cols-1 gap-12 items-center">
+    
+    <div class="flex flex-col gap-4">
+    <MyCv />
+    <Carousels />
+  </div>
+</div>
