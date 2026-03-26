@@ -163,6 +163,15 @@ main {
 	width: 100%;
 }
 
+.contact-intro-card {
+	height: 100%;
+	background: color-mix(in oklab, var(--color-surface-50) 95%, transparent);
+}
+
+.contact-card {
+	min-height: 8.5rem;
+}
+
 .header-link {
 	position: relative;
 	padding: 0.35rem 0;
