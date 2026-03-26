@@ -1,45 +1,70 @@
 ---
-// Puoi importare immagini o altri componenti
-import { Phone, ChevronDown } from "@lucide/svelte"
-import { Image } from 'astro:assets'
-import heroImage from '/public/facNoAdidas.jpeg'
+import { Phone, ChevronDown, House, MapPin, ShieldCheck } from "@lucide/svelte";
+import { Image } from "astro:assets";
+import heroImage from "/public/facNoAdidas.jpeg";
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-  <div class="order-2 md:order-1">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">
-      Fisioterapia a domicilio a Lugo e dintorni
-    </h1>
-    <p class="text-lg md:text-xl mb-2 mt-2">
-      Mi chiamo <strong>Andrea Faccani</strong>, sono un <i>fisioterapista specializzato nei disturbi muscolo-scheletrici e dell'equilibrio</i> e offro <i>valutazioni e trattamenti fisioterapici a domicilio</i> per garantire un percorso di cura comodo e efficace.
-    </p>
-    <hr class="hidden md:block w-full border-t-2 border-gray-300 my-8" />
-    <h2 class="text-xl md:text-2xl mb-6 opacity-80 font-bold">
-      Recupera la migliore attività e qualità di vita direttamente a casa tua
-    </h2>
-    <div class="flex flex-col sm:flex-row gap-4">
-      <a href="https://wa.me/+393335694767" class="btn preset-filled-primary-500">
-        <span>
-          Prenota una Valutazione
+<section class="section-shell px-5 py-6 md:px-8 md:py-10">
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+    <div class="order-2 space-y-6 lg:order-1">
+      <div class="space-y-4">
+        <span class="eyebrow eyebrow-start">
+          <MapPin size={16} />
+          Lugo e dintorni
         </span>
-        <span>
+        <h1 class="section-title max-w-4xl">
+          Fisioterapia a domicilio per ridurre il dolore e tornare a muoverti con piu sicurezza.
+        </h1>
+        <p class="section-copy">
+          Mi chiamo <strong>Andrea Faccani</strong> e mi occupo di disturbi muscolo-scheletrici, recupero post-operatorio e problemi dell'equilibrio. Porto valutazione e trattamento direttamente a casa tua, con un approccio pratico, personalizzato e orientato ai risultati.
+        </p>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-3">
+        <div class="feature-card !p-4">
+          <House class="mb-3 text-primary-600" size={22} />
+          <p class="font-semibold">Sedute a domicilio</p>
+          <p class="mt-1 text-sm opacity-70">Più comodita e meno difficolta logistiche durante il recupero.</p>
+        </div>
+        <div class="feature-card !p-4">
+          <ShieldCheck class="mb-3 text-primary-600" size={22} />
+          <p class="font-semibold">Approccio personalizzato</p>
+          <p class="mt-1 text-sm opacity-70">Valutazione iniziale accurata e obiettivi definiti insieme.</p>
+        </div>
+        <div class="feature-card !p-4">
+          <MapPin class="mb-3 text-primary-600" size={22} />
+          <p class="font-semibold">Zona servita</p>
+          <p class="mt-1 text-sm opacity-70">Lugo e aree limitrofe, con presa in carico rapida.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a href="https://wa.me/+393335694767" class="btn hero-cta-primary preset-filled-primary-500 text-base">
+          <span>Scrivimi su WhatsApp</span>
           <Phone size={20} />
-        </span>
-      </a>
-      <a href="#servizi" class="btn preset-tonal-primary">
-        <span>
-          Scopri i Servizi
-        </span>
-        <span>
+        </a>
+        <a href="#servizi" class="btn hero-cta-secondary preset-outlined-primary-500 text-base">
+          <span>Vedi i trattamenti</span>
           <ChevronDown size={20} />
-        </span>
-      </a>
+        </a>
+      </div>
+
+      <p class="max-w-2xl text-sm leading-6 opacity-70">
+        Il primo incontro serve a capire il problema, impostare il percorso e darti indicazioni pratiche fin da subito.
+      </p>
+    </div>
+    <div class="order-1 lg:order-2">
+      <div class="relative overflow-hidden rounded-[2rem] border border-surface-200-800 bg-surface-50-950 p-3 shadow-2xl shadow-primary-500/10">
+        <div class="absolute inset-x-4 top-4 z-10 flex flex-wrap justify-between gap-2 sm:inset-x-6 sm:top-6">
+          <span class="rounded-full bg-surface-50/90 px-3 py-1 text-[11px] font-semibold backdrop-blur sm:text-xs">Fisioterapia domiciliare</span>
+          <span class="rounded-full bg-primary-500 px-3 py-1 text-[11px] font-semibold text-white sm:text-xs">Valutazione personalizzata</span>
+        </div>
+        <Image
+          src={heroImage}
+          alt="Andrea Faccani durante un trattamento fisioterapico"
+          class="h-full min-h-[300px] w-full rounded-[1.5rem] object-cover sm:min-h-[360px]"
+        />
+      </div>
     </div>
   </div>
-  <div class="order-1 md:order-2">
-    <div class="relative rounded-xl overflow-hidden">
-        <Image src={heroImage} alt="Trattamento fisioterapico"
-        class="rounded-xl w-full h-auto" />
-    </div>
-  </div>
-</div>
+</section>

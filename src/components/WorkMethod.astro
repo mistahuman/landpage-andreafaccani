@@ -19,24 +19,31 @@ const steps = [
 ];
 ---
 <div class="text-center mb-12">
-  <h2 class="text-3xl md:text-4xl font-bold mb-4">Come funziona il servizio</h2>
-  <!-- <p class="max-w-3xl mx-auto">..</p> -->
-</div>
-<div class="relative">
-  <!-- Linea di connessione (visibile solo su desktop) -->
-  <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-primary-500/30 -translate-y-1/2"></div>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {steps.map((step, index) => (
-      <div class="card p-6 preset-outlined-primary-500 relative z-10 bg-surface-50 dark:bg-surface-900">
-        <div class="flex flex-col items-center text-center">
-          <div class="bg-primary-500 text-white text-xl font-bold h-12 w-12 rounded-full flex items-center justify-center mb-4">
-            {step.number}
-          </div>
-          <h3 class="h3 mb-2">{step.title}</h3>
-          <p>{step.description}</p>
-        </div>
-      </div>
-    ))}
+<section class="section-shell">
+  <div class="mb-10 space-y-4 text-center">
+    <h2 class="section-title">Un percorso semplice, senza passaggi inutili.</h2>
+    <p class="section-copy mx-auto">
+      Dalla presa in carico alla progressione delle sedute, l'obiettivo e rendere chiaro cosa fare, perche farlo e come misurare i progressi.
+    </p>
   </div>
-</div>
+
+  <div class="relative">
+    <div class="absolute left-6 top-0 hidden h-full w-px bg-primary-500/20 lg:left-1/2 lg:block lg:h-px lg:w-full lg:-translate-x-1/2 lg:top-12"></div>
+
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      {steps.map((step) => (
+        <div class="feature-card relative z-10">
+          <div class="flex flex-col items-start gap-4 text-left">
+            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-primary-500 text-lg font-bold text-white shadow-lg shadow-primary-500/25">
+              {step.number}
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">{step.title}</h3>
+              <p class="mt-2 leading-7 opacity-75">{step.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

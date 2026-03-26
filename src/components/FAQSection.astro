@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     question: "Lavorate con assicurazioni sanitarie?",
-    answer: "Sì, collaboriamo con le principali assicurazioni sanitarie. Ti consigliamo di verificare la copertura con la tua assicurazione prima della visita. Credo che la collaborazione tra medico e fisioterapista sia fondamentale per il raggiugimento degli obiettivi di salute del paziente."
+    answer: "Se hai una copertura assicurativa o un fondo sanitario, conviene verificare prima le modalita di rimborso previste. In caso di dubbi puoi contattarmi e valutiamo insieme la situazione."
   },
   {
     question: "Quanto dura una seduta di fisioterapia?",
@@ -23,36 +23,25 @@ const faqs = [
 ];
 ---
 
-<div class="max-w-3xl mx-auto">
-  <div class="accordion">
-    {faqs.map((faq, index) => (
-      <div class="accordion-item border-b border-surface-300-600-token">
-        <h3>
-          <button class="accordion-header flex justify-between items-center w-full py-4 text-left font-medium" id={`accordion-header-${index}`} aria-expanded="false">
-            {faq.question}
-            <i class="icon-chevron-down transition-transform"></i>
-          </button>
-        </h3>
-        <div class="accordion-panel hidden" id={`accordion-panel-${index}`} aria-labelledby={`accordion-header-${index}`}>
-          <p class="pb-4">{faq.answer}</p>
+<section class="section-shell">
+  <div class="mb-10 space-y-4 text-center">
+    <h2 class="section-title">Domande frequenti</h2>
+    <p class="section-copy mx-auto">
+      Risposte rapide ai dubbi piu comuni prima della prenotazione.
+    </p>
+  </div>
+
+  <div class="mx-auto max-w-4xl space-y-4">
+    {faqs.map((faq) => (
+      <details class="feature-card group !p-0">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-left font-semibold">
+          <span>{faq.question}</span>
+          <span class="text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+        </summary>
+        <div class="px-5 pb-5 pt-0">
+          <p class="max-w-3xl leading-7 opacity-80">{faq.answer}</p>
         </div>
-      </div>
+      </details>
     ))}
   </div>
-</div>
-
-<script>
-  // Script per il funzionamento dell'accordion
-  document.querySelectorAll('.accordion-header').forEach(button => {
-    button.addEventListener('click', () => {
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      button.setAttribute('aria-expanded', String(!expanded));
-      
-      const panel = button.parentElement.nextElementSibling;
-      panel.classList.toggle('hidden');
-      
-      const icon = button.querySelector('i');
-      icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(180deg)';
-    });
-  });
-</script>
+</section>

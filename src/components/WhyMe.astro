@@ -19,18 +19,23 @@ const problems = [
   }
 ];
 ---
-<div class="text-center mb-12">
-  <h2 class="text-3xl md:text-4xl font-bold mb-4">Perchè scegliere la fiosioterapia con me?</h2>
-  <p class="max-w-3xl mx-auto">Ogni problema fisico ha una soluzione specifica. Il mio approccio personalizzato si concentra sulle esigenze dei pazienti mettendoli al primo posto.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-  {problems.map(({ icon: Icon, title, description }) => (
-    <div class="card preset-filled-secondary-500 p-6 text-center transition-all duration-200 hover:shadow-lg">
-      <div class="bg-error-500/10 p-6 rounded-full inline-flex justify-center items-center mb-4">
-        <Icon size={40} />
+<section class="section-shell">
+  <div class="mb-10 text-center">
+    <h2 class="section-title mb-4">Perche scegliere la fisioterapia con me</h2>
+    <p class="section-copy mx-auto">
+      Ogni problema fisico richiede una valutazione precisa e un percorso coerente. Il mio approccio mette al centro la persona, non solo il sintomo.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {problems.map(({ icon: Icon, title, description }) => (
+      <div class="feature-card text-center">
+        <div class="hero-highlight-icon mx-auto mb-4">
+          <Icon size={22} class="text-primary-700" />
+        </div>
+        <h3 class="text-xl font-bold mb-2">{title}</h3>
+        <p class="leading-7 opacity-75">{description}</p>
       </div>
-      <h3 class="h3 mb-2">{title}</h3>
-      <p>{description}</p>
-    </div>
-  ))}
-</div>
+    ))}
+  </div>
+</section>

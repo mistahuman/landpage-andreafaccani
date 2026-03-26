@@ -1,64 +1,60 @@
 ---
-import { Send, Instagram, Mail, Phone } from "@lucide/svelte";
+import { Send, Mail, Phone, CalendarClock } from "@lucide/svelte";
 ---
-<div class="text-center mb-12">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Prenota ora la tua seduta e inizia il tuo percorso di guarigione.</h2>
-    <!-- <p class="max-w-3xl mx-auto">Contattami!</p> -->
-  </div>
-<div class="text-center space-y-4">
-        <ul class="space-y-2">
-            <li>
-                <a
-                class="btn preset-outlined-primary-500"
-                href="tel:+393335694767"
-                type="button"
-                >
-                <span>Chiama ora</span>
-                <span>
-                    <Phone size={20} />
-                </span>
-                </a>
-
-            </li>
-            <li>
-                <a
-                    class="btn preset-outlined-primary-500"
-					href="https://wa.me/+393335694767"
-                    type="button"
-				>
-                    <span>
-                        Chiama o scrivi su WhatsApp
-                    </span>
-                    <span>
-                        <Send size={20} />
-                    </span>
-				</a>
-            </li>
-            <li>
-                <a
-                    href="mailto:andrea.faccani3@gmail.com"
-                    target="_blank"
-                    type="button"
-                    class="btn preset-outlined-primary-500"
-                >
-                    <span> andrea.faccani3@gmail.com </span>
-                    <span>
-                        <Mail size={20} />
-                    </span>
-                </a>
-            </li>
-            <!-- <li>
-                <a
-                    href="https://www.instagram.com/facca_26"
-                    target="_blank"
-                    type="button"
-                    class="btn preset-outlined-primary-500"
-                >
-                    <span> facca_26 </span>
-                    <span>
-                        <Instagram size={20} />
-                    </span>
-                </a>
-            </li> -->
-        </ul>
+<section class="section-shell">
+  <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+    <div class="space-y-4">
+      <h2 class="section-title">Prenota una valutazione e capiamo come iniziare.</h2>
+      <p class="section-copy">
+        Se vuoi capire se il trattamento domiciliare e adatto al tuo caso, scrivimi o chiamami. Ti rispondo per inquadrare la situazione e organizzare il primo appuntamento.
+      </p>
+      <div class="feature-card !p-5">
+        <div class="flex items-start gap-4">
+          <div class="rounded-2xl bg-primary-500/12 p-3 text-primary-700">
+            <CalendarClock size={22} />
+          </div>
+          <div>
+            <p class="font-semibold">Primo contatto semplice e diretto</p>
+            <p class="mt-1 text-sm leading-6 opacity-75">
+              Puoi contattarmi via telefono, WhatsApp o email. In base al caso definiamo tempi, modalita e luogo del trattamento.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="grid gap-3">
+      <a class="feature-card contact-card flex items-center justify-between gap-4 !p-5" href="tel:+393335694767" type="button">
+        <div>
+          <p class="text-sm uppercase tracking-[0.18em] opacity-60">Telefono</p>
+          <p class="mt-1 text-lg font-semibold">Chiama ora</p>
+          <p class="mt-1 text-sm opacity-70">Per un confronto rapido sul tuo caso.</p>
+        </div>
+        <Phone size={22} />
+      </a>
+
+      <a class="feature-card contact-card flex items-center justify-between gap-4 !p-5" href="https://wa.me/+393335694767" type="button">
+        <div>
+          <p class="text-sm uppercase tracking-[0.18em] opacity-60">WhatsApp</p>
+          <p class="mt-1 text-lg font-semibold">Scrivi per prenotare</p>
+          <p class="mt-1 text-sm opacity-70">Il canale piu semplice per fissare la valutazione.</p>
+        </div>
+        <Send size={22} />
+      </a>
+
+      <a
+        href="mailto:andrea.faccani3@gmail.com"
+        target="_blank"
+        type="button"
+        class="feature-card contact-card flex items-center justify-between gap-4 !p-5"
+      >
+        <div>
+          <p class="text-sm uppercase tracking-[0.18em] opacity-60">Email</p>
+          <p class="mt-1 text-lg font-semibold">andrea.faccani3@gmail.com</p>
+          <p class="mt-1 text-sm opacity-70">Utile se vuoi spiegare meglio la situazione.</p>
+        </div>
+        <Mail size={22} />
+      </a>
+    </div>
+  </div>
+</section>
