@@ -39,7 +39,6 @@ html {
 }
 
 body {
-	font-family: "Instrument Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
 	color: color-mix(in oklab, var(--color-surface-950) 88%, white 12%);
 }
 
