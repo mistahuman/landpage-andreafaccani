@@ -1,5 +1,5 @@
 ---
-import { GraduationCap, ChevronDown } from "@lucide/svelte";
+import { GraduationCap, ChevronDown, Check } from "@lucide/svelte";
 ---
 
 <div class="feature-card">
@@ -16,11 +16,18 @@ import { GraduationCap, ChevronDown } from "@lucide/svelte";
   <div class="space-y-3 text-base">
     <p class="font-semibold text-secondary-600">Formazione avanzata in:</p>
     <ul class="grid gap-x-6 gap-y-2 md:grid-cols-2">
-      <li>Trattamento miofasciale secondo metodo Stecco</li>
-      <li>Terapia manuale secondo concetto Maitland</li>
-      <li>Riabilitazione della spalla</li>
-      <li>Lombalgia acuta e cronica</li>
-      <li>Valutazione e trattamento dei disturbi dell'equilibrio</li>
+      {[
+        "Trattamento miofasciale secondo metodo Stecco",
+        "Terapia manuale secondo concetto Maitland",
+        "Riabilitazione della spalla",
+        "Lombalgia acuta e cronica",
+        "Valutazione e trattamento dei disturbi dell'equilibrio",
+      ].map((item) => (
+        <li class="flex items-start gap-2">
+          <span class="mt-0.5 shrink-0 text-secondary-600"><Check size={16} /></span>
+          {item}
+        </li>
+      ))}
     </ul>
   </div>
 
